@@ -1,0 +1,87 @@
+.flex {
+    background-color: "00c7ce";
+    height: 50vh; /*ウィンドウの高さ全体を１００として割合でサイズを指定する*/
+    padding: 10px;
+    /* display : flexで縦に並んでいる要素をFlexレイアウトで横並びにする　親の箱がFlexコンテナに変更される*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* -->の方向（初期値） */
+    flex-direction: row;
+    /* ↓の方向にできる、またそれぞれに-reverseをつけることで逆順にすることができる */
+    flex-direction: column;
+    /* Flexコンテナの内容の横幅の合計値がコンテナ自体の横幅を超過する場兄の折り返しの方法の指定 */
+    flex-wrap: wrap;
+    /* flex-directionとflex-wrapのまとめて指定する方法
+    display: flex;
+    flex-flow: row wrap; */
+    /* Flexコンテナの内容の横方向の整列方法を指定 */
+    /* justify-content:  ; */
+    /* Flexコンテナの内容の縦方向の整列方法を指定 */
+    /* align-items:  ; */
+    /* Flexコンテナの内容が複数行になった際の整列方法の指定 */
+    /* align-content: flex-end(etc...); */
+}
+
+.flex > div {
+    background-color: #fff;
+    margin: 5px;
+    font-size: 30px;
+}
+
+/* order順番を決める */
+.flex > div:nth-child(1){
+    order: 3;
+}
+
+.flex > div:nth-child(2){
+    order: 4;
+}
+
+.flex > div:nth-child(3){
+    order: 1;
+}
+
+.flex > div:nth-child(4){
+    order: 1;
+}
+
+
+/* flex-grow Flexアイテムの横幅の伸びる比率を指定 */
+.flex > div:nth-child(1){
+    flex-grow: 0;
+}
+
+.flex > div:nth-child(2){
+    flex-grow: 1;
+}
+
+.flex > div:nth-child(3){
+    flex-grow: 2;
+}
+
+.flex > div:nth-child(4){
+    flex-grow: 3;
+}
+
+/* flex-shrink　Flexアイテムの横幅の縮む比率を指定 */
+
+/* flex-basis Flexアイテムの横幅を指定 */
+/* Flexアイテムの横幅の指定はwidthでもできるが、
+違いは親の箱のflex-directionが縦並びすなわち、columnなどの設定であれば自動で高さの設定に切り替わるという点が異なる */
+
+/* align-self　Flexアイテムの縦方向の位置をアイテムごとに個別に指定できる */
+.flex > div:nth-child(2){
+    align-self: flex-start;
+}
+
+/* よく使うFlexboxの設定
+最初の要素だけ左揃えで、それ以外は右揃えで横に並べる */
+.flex {
+    display: flex;
+    justify-content: flex-end; /*これで右揃えになった*/
+}
+
+.flex > :first-child{
+    margin-right: auto;/*最初の要素の右側の外側余白をautoにしておくことで左に揃えることができる*/
+}
