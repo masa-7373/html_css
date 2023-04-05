@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #6c6b6b;
+}
+
+/*色部分だけ答え参照*/
+
+.headerbox {
+    display: flex;
+    justify-content: flex-end; /*右揃え*/
+    width: 100%;
+    padding: 30px 20px;
+    background-color: #ff00ff; 
+}
+
+.headerbox > :first-child {
+    margin-right: auto; /*最初は左に*/
+}
+
+
+.headerbox-item{
+    background-color: #fbb3ff;
+    flex-basis: 140px;
+    height: 70px;
+    margin: 0 10px;
+}
+
+
+main {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #d8ffb6;
+}
+
+.box {
+    max-width: 700px;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #00b522;
+}
+
+.box-item {
+    background-color: #fff75a;
+    flex-basis: 200px;
+    height: 130px;
+    margin: 10px;
+}
+
+/*3の倍数になるところの右外側の余白を消すことで折り返し*/
+.box-item:nth-child(3n) { 
+    margin-right: 0;
+}
+
+.footerbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #52a1ff;
+    padding: 20px;
+}
+
+.footerbox-item {
+    flex-basis: 45%;
+    max-width: 600px;
+    height: 40px;
+    margin: 10px;
+    background-color: #b6e7ff;
+}
+
+/* ↓なくてもfooterboxのjustify-contentがcenterと横幅の関係で勝手にズレる */
+/* .footerbox-item :nth-child(2){
+    margin-right: 0;
+} */
+
